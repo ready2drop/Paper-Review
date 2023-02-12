@@ -16,8 +16,7 @@
 ### Introduction
 
 #### Dataset
-
-
+![img_1](https://user-images.githubusercontent.com/89971553/218296978-686b7cef-bb3d-4159-87a2-9bfd60b66b46.jpg)
 - Each set contains a pair of multi-view (a transverse and a longitudinal views) US images
 - Data augmentation : scaling, rotation, flipping, and mixup
 
@@ -27,6 +26,7 @@
 - We randomly split the dataset at the patient level into 7:1:2 for training, validation, and test
 
 #### Model Architectures
+![img_2](https://user-images.githubusercontent.com/89971553/218296986-074771e7-6885-455c-aae6-b90e6eb451b1.jpg)
 - MVC model(Multi-view classification)
 - The feature extraction Backbone : Swin-transformer 
 - (ft,fl)은 Personalized Weighting allocation network(PAWN)으로 보내져 output이 Wt, Wl
@@ -36,7 +36,7 @@
 
 ---------
 ### Result
-
+![img_3](https://user-images.githubusercontent.com/89971553/218296996-ab2979bd-6bd5-4c44-beb3-73e7ac1a4bc3.jpg)
 - MVMT, AADNN are trained only using transverse or longitudinal view, MVMT higher ACC and PRE. It might be caused by its larger size with greater modeling capacity. 
 - The AW3M model scored higher F1-score, displaying a balanced performance
 - AdaMML model proposed to analyze multi-modal data for video classification and learns to discard modalities to improve accuracy.
