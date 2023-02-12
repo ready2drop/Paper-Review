@@ -1,5 +1,4 @@
-# Paper-Review
-
+# Paper-Review ㄴㅏ ㅂㅏ ㅂㅗ
 개인적으로 리뷰했던 논문들을 정리하는 곳입니다. 내용 관련한 문의는 언제든지 0kangsungmin@gmail.com 로 해주시면 감사하겠습니다.
 
 This repository containing reviewed papers based on computer vision. Please contact me at 0kangsungmin@gmail.com whenever you want.
