@@ -4,6 +4,7 @@
 #### Accepted by MICCAI 2022
 #### Official code : None
 ###### Cite as : Huang, Han, et al. "Personalized Diagnostic Tool for Thyroid Cancer Classification Using Multi-view Ultrasound." Medical Image Computing and Computer Assisted Intervention–MICCAI 2022: 25th International Conference, Singapore, September 18–22, 2022, Proceedings, Part III. Cham: Springer Nature Switzerland, 2022.
+###### Index : *Thyroid Cancer*, *Ultrasound*, *Multi-view*, *Classification*
 ------
 
 
@@ -15,18 +16,43 @@
 ### Introduction
 
 #### Dataset
+
+
+- Each set contains a pair of multi-view (a transverse and a longitudinal views) US images
+- Data augmentation : scaling, rotation, flipping, and mixup
+
 #### Training and Inference
+- We use the AdamW optimizer with a learning rate of 5e-4
+- The weight decay is set to 0.05. 
+- We randomly split the dataset at the patient level into 7:1:2 for training, validation, and test
+
 #### Model Architectures
+- MVC model(Multi-view classification)
+- The feature extraction Backbone : Swin-transformer 
+- (ft,fl)은 Personalized Weighting allocation network(PAWN)으로 보내져 output이 Wt, Wl
+- Multiview data에 대한 contrastive loss equipped with view awareness 적용
+- generate view-specific decisions(Pred) 을 생성하기 위해 다층퍼셉트론(MLP) 통과 
+- Benign or Malignant (Binary classification)
 
 ---------
 ### Result
 
+- MVMT, AADNN are trained only using transverse or longitudinal view, MVMT higher ACC and PRE. It might be caused by its larger size with greater modeling capacity. 
+- The AW3M model scored higher F1-score, displaying a balanced performance
+- AdaMML model proposed to analyze multi-modal data for video classification and learns to discard modalities to improve accuracy.
+
 
 --------
 ### Contribution
+- Longitudinal view help to promote diagnosis accuracy than transverse view
+- 병변의 편차가 크기때문에 Multiview data에 대한 contrastive loss equipped with view awareness 적용
+-PAWN과 VACL design이 향후 multi-view or multimodal problems in future applications 적용 가능할 것
 
 
 
 
 --------
 ### Conclusion
+- Multi-view US를 활용한 갑상선암 진단을 위한 맞춤형 진단 도구로 본 논문에서 제안한 MVC model without the PWAN and VACL이 단일 시점 모델과 다중시점 모델 sota보다 가장 유망한 성능 달성
+- 추후 초음파 진단 분류 task에서 multi view로 분석하는 것이 단일 view 보다 정확도 향상 기대 
+
