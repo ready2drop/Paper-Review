@@ -5,7 +5,7 @@
 This repository containing reviewed papers based on computer vision of interesting field. Please contact me at 0kangsungmin@gmail.com whenever you want.
 
 
-#### *용량 문제로 몇몇 논문들의 데이터들이 누락될 수 있습니다.*
+#### *용량 문제로 몇몇 데이터들이 누락될 수 있습니다.*
 
 If, some paper material such as data are missing, it is not possible to upload because the data exceeded the file size limit.
 
